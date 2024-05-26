@@ -23,3 +23,26 @@ TravelBuddy is a Streamlit-based web application designed to simplify your trave
    ```bash
    git clone https://github.com/yourgithubusername/travelbuddy.git
    cd travelbuddy
+   
+2. Install dependencies:
+
+   ```bash
+   Copy code
+   pip install -r requirements.txt
+   Set up environment variables:
+
+3. Create a .env file in the root directory of the project and add the following line:
+
+   ```bash
+   plaintext
+   Copy code
+   GOOGLE_API_KEY=your_api_key_here
+   Replace your_api_key_here with your actual API key for Google's Generative AI.
+
+4. Run the application:
+
+   ```bash
+   Copy code
+   streamlit run app.py
+
+Visit http://localhost:8501 in your web browser to view the app.
