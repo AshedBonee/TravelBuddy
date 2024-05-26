@@ -3,7 +3,6 @@
 TravelBuddy is a Streamlit-based web application designed to simplify your travel planning process. By interacting with a generative AI, TravelBuddy helps you create personalized travel itineraries based on your preferences for destination, duration, activities, accommodation type, and budget.
 
 ## Features
-
 - **Interactive Trip Planning**: Input your travel details such as destination, duration, number of people, and preferences to get a customized travel plan.
 - **Multi-Level Prompting**: The app engages you in a multi-level input process to refine the travel plans based on activities, accommodations, and budget.
 - **Real-Time AI Interaction**: Uses Google's Generative AI to generate travel plans and itineraries dynamically.
@@ -11,7 +10,6 @@ TravelBuddy is a Streamlit-based web application designed to simplify your trave
 ## Setup Instructions
 
 ### Prerequisites
-
 - Python 3.8+
 - Streamlit
 - An API key for Google's Generative AI services
@@ -19,20 +17,17 @@ TravelBuddy is a Streamlit-based web application designed to simplify your trave
 ### Local Setup
 
 1. **Clone the repository:**
-
    ```bash
    git clone https://github.com/yourgithubusername/travelbuddy.git
    cd travelbuddy
    
 2. **Install dependencies:**
-
    ```bash
    Copy code
    pip install -r requirements.txt
    Set up environment variables:
 
 3. **Create a .env file in the root directory of the project and add the following line:**
-
    ```bash
    plaintext
    Copy code
@@ -40,12 +35,9 @@ TravelBuddy is a Streamlit-based web application designed to simplify your trave
    Replace your_api_key_here with your actual API key for Google's Generative AI.
 
 4. **Run the application:**
-
    ```bash
    Copy code
    streamlit run app.py
-
-Visit http://localhost:8501 in your web browser to view the app.
 
 ## How to Use
 1. Input Basic Information:
