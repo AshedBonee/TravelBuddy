@@ -3,6 +3,7 @@ import os
 import google.generativeai as genai
 import time
 from dotenv import load_dotenv
+import pandas as pd  # Import pandas for data manipulation
 
 def configure():
     # Ensures environment variables are loaded from .env file
@@ -30,14 +31,14 @@ def handle_chat(question):
         intro_response = "Hello! I am TravelBuddy, your virtual travel assistant. Let's plan your trip together."
         response = st.session_state.chat_session.send_message(question)
         full_response = f"{intro_response} {response.text} Anything else I can help you with?"
-
+        
         st.session_state.chat_history.append({"type": "Question", "content": question})
         st.session_state.chat_history.append({"type": "Response", "content": full_response})
-        return full_response
+        return response.text  # Return just the API text part for parsing
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
         time.sleep(1)  # Slight delay to simulate thought process
-        return "An error occurred. Please try again."
+        return None
 
 def display_history():
     with st.container():
@@ -65,8 +66,15 @@ if st.sidebar.button('Plan my trip'):
     if place_input and duration_input and people_input:
         question = f"Plan a trip to {place_input} for {duration_input} days for {people_input} people. Include an itinerary and expected expenses."
         response = handle_chat(question)
-        st.subheader("Here's your trip plan:")
-        st.write(response)
+        if response:
+            # Assuming the response is a list of comma-separated values for each day
+            # Example response: "Day 1, Activity, Cost; Day 2, Activity, Cost"
+            data = [item.split(',') for item in response.split(';')]
+            df = pd.DataFrame(data, columns=['Day', 'Activity', 'Cost'])
+            st.subheader("Here's your trip plan in a table format:")
+            st.table(df)
+        else:
+            st.write("Could not retrieve a valid response for itinerary planning.")
     else:
         st.sidebar.error("Please fill in all the fields.")
 
