@@ -24,14 +24,14 @@ TravelBuddy is a Streamlit-based web application designed to simplify your trave
    git clone https://github.com/yourgithubusername/travelbuddy.git
    cd travelbuddy
    
-2. Install dependencies:
+2. **Install dependencies:**
 
    ```bash
    Copy code
    pip install -r requirements.txt
    Set up environment variables:
 
-3. Create a .env file in the root directory of the project and add the following line:
+3. **Create a .env file in the root directory of the project and add the following line:**
 
    ```bash
    plaintext
@@ -39,10 +39,26 @@ TravelBuddy is a Streamlit-based web application designed to simplify your trave
    GOOGLE_API_KEY=your_api_key_here
    Replace your_api_key_here with your actual API key for Google's Generative AI.
 
-4. Run the application:
+4. **Run the application:**
 
    ```bash
    Copy code
    streamlit run app.py
 
 Visit http://localhost:8501 in your web browser to view the app.
+
+###How to Use
+1. Input Basic Information:
+- Specify the destination, duration, and number of people traveling.
+- Specify Preferences:
+
+2. Choose the types of activities you are interested in.
+- Select your preferred type of accommodation.
+- Define your budget per person in USD.
+  
+3. Generate Itinerary:
+- Click on 'Plan my trip' to generate a detailed itinerary including expected expenses.
+
+###Contributing
+Contributions to improve TravelBuddy are welcome. Please feel free to fork the repository, make changes, and submit pull requests. You can also open issues to discuss improvements or offer suggestions.
+
