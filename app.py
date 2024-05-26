@@ -86,4 +86,3 @@ if st.sidebar.button('Plan my trip'):
 
 # Display chat history
 display_history()
-``
