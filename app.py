@@ -74,14 +74,5 @@ def follow_up_question():
         else:
             st.error("Please enter a follow-up question.")
 
-def display_history():
-    with st.container():
-        for entry in st.session_state.chat_history:
-            if entry['type'] == "Question":
-                st.markdown(f"<p style='font-size:16px; font-weight:bold;'>Your Inquiry:</p><p style='font-size:16px;'>{entry['content']}</p>", unsafe_allow_html=True)
-            elif entry['type'] == "Response":
-                st.markdown(f"<p style='font-size:16px; font-weight:bold;'>Response from TravelBuddy:</p><p style='font-size:16px;'>{entry['content']}</p>", unsafe_allow_html=True)
-
-# Display follow-up question function and chat history
+# Display follow-up question function
 follow_up_question()
-display_history()
