@@ -2,6 +2,13 @@ import streamlit as st
 import os
 import google.generativeai as genai
 import time
+from dotenv import load_dotenv
+
+def configure():
+    # Ensures environment variables are loaded from .env file
+    load_dotenv()  # Fixed: Call the function to actually load the environment variables
+
+configure()  # Call configure to load environment variables before using them
 
 # Load API key from environment variable
 API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -29,7 +36,7 @@ def handle_chat(question):
         return full_response
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
-        time.sleep(1)
+        time.sleep(1)  # Slight delay to simulate thought process
         return "An error occurred. Please try again."
 
 def display_history():
@@ -40,11 +47,6 @@ def display_history():
             elif entry['type'] == "Response":
                 formatted_response = entry['content'].replace("**", "<b>").replace("<b>", "</b>")
                 st.markdown(f"<p style='font-size:16px; font-weight:bold;'>Response from TravelBuddy:</p><p style='font-size:16px;'>{formatted_response}</p>", unsafe_allow_html=True)
-
-def get_gemini_response(question):
-    model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content(question)
-    return response.text
 
 # Streamlit App setup
 st.set_page_config(page_title="TravelBuddy - Your Virtual Travel Assistant")
