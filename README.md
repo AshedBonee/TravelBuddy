@@ -47,18 +47,18 @@ TravelBuddy is a Streamlit-based web application designed to simplify your trave
 
 Visit http://localhost:8501 in your web browser to view the app.
 
-###How to Use
+### How to Use
 1. Input Basic Information:
-- Specify the destination, duration, and number of people traveling.
-- Specify Preferences:
+   - Specify the destination, duration, and number of people traveling.
+   - Specify Preferences:
 
 2. Choose the types of activities you are interested in.
-- Select your preferred type of accommodation.
-- Define your budget per person in USD.
+   - Select your preferred type of accommodation.
+   - Define your budget per person in USD.
   
 3. Generate Itinerary:
-- Click on 'Plan my trip' to generate a detailed itinerary including expected expenses.
+   - Click on 'Plan my trip' to generate a detailed itinerary including expected expenses.
 
-###Contributing
+### Contributing
 Contributions to improve TravelBuddy are welcome. Please feel free to fork the repository, make changes, and submit pull requests. You can also open issues to discuss improvements or offer suggestions.
 
