@@ -2,8 +2,8 @@ import streamlit as st
 import os
 import google.generativeai as genai
 import time
+import pandas as pd
 from dotenv import load_dotenv
-import pandas as pd  # Import pandas for data manipulation
 
 def configure():
     # Ensures environment variables are loaded from .env file
